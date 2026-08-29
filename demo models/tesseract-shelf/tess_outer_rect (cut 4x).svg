@@ -1,8 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="175.5mm" height="225.5mm" baseProfile="tiny" version="1.2" viewBox="0 0 497.5 639.2">
-  <!-- Generator: Adobe Illustrator 30.6.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 109)  -->
-<g>
-  <rect x=".7" y=".7" width="496.1" height="637.8" fill="none" stroke="#ccc" stroke-miterlimit="11.3" stroke-width=".30mm"/>
-  <rect x="17.9" y="17.7" width="462" height="603.8" fill="none" stroke="#000" stroke-miterlimit="11.3" stroke-width=".15mm"/>
-</g>
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="175.5mm" height="225.5mm" version="1.1" viewBox="0 0 497.5 639.2" data-thickness="6mm">
+  <style type="text/css">
+.entry,
+.exit {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.exit { filter: blur(1.5px); }
+</style>
+  <g>
+    <rect x=".7" y=".7" width="496.1" height="637.8" class="exit" />
+    <rect x="17.9" y="17.7" width="462" height="603.8" class="entry" />
+  </g>
 </svg>

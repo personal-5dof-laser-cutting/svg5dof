@@ -1,24 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" width="30cm" height="30cm" baseProfile="tiny" version="1.2" viewBox="0 0 850.394 850.394">
-  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="30cm" height="30cm" version="1.1" viewBox="0 0 850.394 850.394" data-thickness="6mm">
+  <style type="text/css">
+.entry,
+.exit {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.exit { filter: blur(1.5px); }
+</style>
   <g>
-    <rect x="51.024" y="75.275" width="374.173" height="311.91" fill="none" stroke="#ccc" stroke-miterlimit="11.339" stroke-width=".30mm"/>
-    <rect x="68.032" y="68.238" width="340.157" height="325.984" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width=".15mm"/>
+    <rect x="51.024" y="75.275" width="374.173" height="311.91" class="exit" />
+    <rect x="68.032" y="68.238" width="340.157" height="325.984" class="entry" />
   </g>
-
   <g>
-    <rect x="51.024" y="432.234" width="374.173" height="311.91" fill="none" stroke="#ccc" stroke-miterlimit="11.339" stroke-width=".30mm"/>
-    <rect x="68.032" y="425.197" width="340.157" height="325.984" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width=".15mm"/>
+    <rect x="51.024" y="432.234" width="374.173" height="311.91" class="exit" />
+    <rect x="68.032" y="425.197" width="340.157" height="325.984" class="entry" />
   </g>
-
   <g>
-    <rect x="446.485" y="75.275" width="374.173" height="311.91" fill="none" stroke="#ccc" stroke-miterlimit="11.339" stroke-width=".30mm"/>
-    <rect x="463.493" y="68.238" width="340.157" height="325.984" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width=".15mm"/>
+    <rect x="446.485" y="75.275" width="374.173" height="311.91" class="exit" />
+    <rect x="463.493" y="68.238" width="340.157" height="325.984" class="entry" />
   </g>
-
   <g>
-    <rect x="446.485" y="432.234" width="374.173" height="311.91" fill="none" stroke="#ccc" stroke-miterlimit="11.339" stroke-width=".30mm"/>
-    <rect x="463.493" y="425.197" width="340.157" height="325.984" fill="none" stroke="#000" stroke-miterlimit="11.339" stroke-width=".15mm"/>
+    <rect x="446.485" y="432.234" width="374.173" height="311.91" class="exit" />
+    <rect x="463.493" y="425.197" width="340.157" height="325.984" class="entry" />
   </g>
-
 </svg>
