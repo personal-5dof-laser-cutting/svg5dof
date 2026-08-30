@@ -1,6 +1,6 @@
 # SVG5DOF
 SVG5DOF is a fully SVG-compliant file format to encode cutting plans for 5DOF laser cutting in 2D, which means every SVG5DOF file MUST fully adhere to the SVG specification, in the respective version indicated in the file header.
-Its key feature is describing slanted cuts as a group (`<g>`) of "entry" and "exit" lines (this group is also called an "edge profile"). It does so by using CSS classes (also called "attributes" in this document).
+Its key feature is describing slanted cuts as a group (`<g>`) of "entry" and "exit" lines (this group is also called an "edge profile"). It does so by using CSS classes. To maintain backwards compatibility, ungrouped lines that are interpreted as cuts are treated as straight through-cuts.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
 "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119).
@@ -15,13 +15,13 @@ Negative values are permitted (such as `depth_-2mm`). Relative values may leave 
 
 ### entry
 Each group MUST have at least one entry line.
-Entry lines MAY be combined with a depth attribute. When cutting, the entry line is projected onto the top surface of the material piece along the cuttting angle.
-Not providing a depth attribute is equivalent to `depth_0`
+Entry lines MAY be combined with a specified depth. When cutting, the entry line is projected onto the top surface of the material piece along the cuttting angle.
+Not specifying a depth in addition to `entry` is equivalent to `depth_0`
 
 ### exit
 Each group MAY have one or more exit lines.
-Entry lines MAY be combined with a depth attribute. When cutting, the entry line is projected onto the bottom surface of the material piece along the cuttting angle.
-Not providing a depth attribute is equivalent to `depth_100`
+Exit lines MAY be combined with a specified depth. When cutting, the exit line is projected onto the bottom surface of the material piece along the cuttting angle.
+Not specifying a depth in addition to `exit` is equivalent to `depth_100`
 
 ### depth-ramp
 // TODO
@@ -41,6 +41,8 @@ To allow use with SVG editors that do not support editing classes, lines without
 - a gray line with darkness in the interval (100%, 20%) is treated the same as a `depth_{VALUE}` line, where `VALUE = 100% - (darkness - 20%) / 0.8`, e.g., 40% darkness indicates a cutting depth of 75%.
 
 Lines and shapes without `entry`, `exit` or `depth_*` and stroke colors other than gray or black are permitted with the convention of red lines being cut and blue lines and shapes being used for markings/engravings.
+
+To further allow SVG5DOF to be a superset of the common SVG representations used by users of 3DOF laser cutters, ungrouped lines that are interpreted as cuts according to these rules are treated as straight (0° tilt angle) through-cuts.
 
 ## cutting
 ### segment
@@ -71,8 +73,7 @@ The group above would be cut by two cuts, the first of which is cut from the top
 Paths describing a cut segment MUST have the same number of control points (`len(a) == len(b)`). An application processing SVG5DOF SHOULD alert the user if this constraint is violated by highlighting the violating segments. The application MAY provide a way to attempt to correct segments with non-matching paths (`a`, `b`) by resampling paths with equidistant control points, the number of control points to sample the curve in may be determined by `LCM(len(a), len(b))`.
 
 ## visualization
-A frontend application visualizing the file format SHOULD render the depth attribute as a blur effect (such as `filter: blur(4px);` in CSS) where the blur radius increases with depth.
+A frontend application visualizing the file format SHOULD render the depth as a blur effect (such as `filter: blur(1.5px);` in CSS) where the blur radius increases with depth.
 
 As an alternative, a renderer MAY instead visualize the depth with a combination of gray-scale value and line thickness, where the darkness decreases with depth while the line thickness increases with depth.
-
 
